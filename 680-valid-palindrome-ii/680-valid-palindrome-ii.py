@@ -33,9 +33,6 @@ class Solution(object):
                 left = s[start+1: end + 1]
                 right = s[start:end]
                 
-                if left == left[::-1] or right==right[::-1]:
-                    return True
-                else:
-                    return False
+                return left == left[::-1] or right == right[::-1]
                 
         
