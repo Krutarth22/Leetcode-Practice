@@ -7,15 +7,14 @@ class Solution(object):
         
         result = []
         
-        height = 0
+        temp = 0
         
-        for i in range(len(heights) -1,-1,-1):
+        for i in range(len(heights)-1,-1,-1):
             
-            if heights[i] > height:
+            if heights[i] > temp:
                 
                 result.append(i)
                 
-                height = heights[i]
-                
+                temp = heights[i]
                 
         return reversed(result)
