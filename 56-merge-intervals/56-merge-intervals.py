@@ -5,17 +5,13 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         
-        
-        #Step 1 sort the interval
-        
-        intervals.sort(key = lambda x: x[0])
+        intervals.sort() # O(nlogn)
         
         result = []
         
-        
         for i in intervals:
             
-            if not result or result[-1][-1] < i[0]:
+            if not result or i[0] > result[-1][-1]:
                 
                 result.append(i)
                 
@@ -24,3 +20,7 @@ class Solution(object):
                 result[-1][-1] = max(result[-1][-1], i[-1])
                 
         return result
+        
+        
+        
+        
