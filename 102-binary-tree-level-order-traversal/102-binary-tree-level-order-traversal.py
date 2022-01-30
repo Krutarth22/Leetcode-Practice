@@ -11,28 +11,29 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         if not root:
+            
             return []
         
         queue = deque([root])
         result = []
-        
         while queue:
+            level = []  
+            for i in range(len(queue)):
             
-            level = []
-            size = len(queue)
             
-            for i in range(size):
-                
+            
                 node = queue.popleft()
-                
-                if node.left is not None:
-                    queue.append(node.left)
-                    
-                if node.right is not None:
-                    queue.append(node.right)
-                    
-                level.append(node.val)
-                
-            result.append(level)
             
+                if node.left:
+                
+                    queue.append(node.left)
+                
+                if node.right:
+                
+                    queue.append(node.right)
+                
+                level.append(node.val)
+            
+            result.append(level)
+        
         return result
